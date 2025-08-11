@@ -1,0 +1,56 @@
+Explanation of Calculator Code
+________________________________________
+1. Functions for Each Operation
+def add(a, b):
+    return a + b
+•	This takes two numbers a and b and returns their sum.
+•	Similarly, subtract, multiply, and divide functions perform their respective operations.
+•	In divide, an extra check is added to prevent division by zero.
+________________________________________
+2. Welcome Message
+print("Welcome to Codmetric Calculator!")
+print("Operations: +  -  *  /")
+print("Type 'exit' to quit.\n")
+•	Informs the user what the calculator can do and how to exit.
+________________________________________
+3. Infinite Loop for Continuous Use
+while True:
+    ...
+•	This keeps the program running until the user types exit.
+•	After every calculation, the loop starts again.
+________________________________________
+4. Taking User Input
+num1 = input("Enter first number (or type 'exit'): ")
+•	If the user types exit, the program ends.
+•	Otherwise, the input is converted to a floating-point number so decimals are allowed.
+________________________________________
+5. Choosing an Operation
+operator = input("Enter operation (+, -, *, /): ")
+•	The user selects which operation to perform.
+________________________________________
+
+6. Performing the Calculation
+if operator == "+":
+    result = add(num1, num2)
+elif operator == "-":
+    result = subtract(num1, num2)
+elif operator == "*":
+    result = multiply(num1, num2)
+elif operator == "/":
+    result = divide(num1, num2)
+•	Depending on the operator entered, the respective function is called.
+•	The result is stored in the variable result.
+________________________________________
+7. Showing the Result
+print(f"Result: {num1} {operator} {num2} = {result:.2f}\n")
+•	Uses an f-string for clean formatting.
+•	:.2f shows the result with exactly 2 decimal places.
+________________________________________
+8. Error Handling
+except ValueError:
+    print("❌ Invalid input! Please enter a valid number.\n")
+except ZeroDivisionError as e:
+    print(f"❌ Error: {e}\n")
+•	ValueError is handled if the user enters non-numeric values.
+•	ZeroDivisionError is handled to prevent dividing by zero.
+
